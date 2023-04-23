@@ -1,4 +1,4 @@
-import './app/types.mjs'
+import './types.mjs'
 let failTest = []
 let successTest = []
 console.log('\n\n\n\n --------------- STRING UPDATED TEST --------------------')
