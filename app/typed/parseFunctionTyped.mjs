@@ -1,7 +1,3 @@
-import Joi from "joi";
-
-export const T = Joi
-
 function methodType( text , fn , returnType ){
     let definitionParams = text.slice( text.split('(')[0].length + 1 , -1).replace('))',')').split(' ').join('')
     let typesParams = ''
