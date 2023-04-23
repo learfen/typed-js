@@ -1,5 +1,5 @@
 import Joi from "joi"
-import { create , install } from "./createType.mjs"
+import { create , install } from "./app/typed/createType.mjs"
 
 const $userName = create(Joi.string().alphanum().min(3).max(20))
 const $legajo = create(Joi.number().min(1))
