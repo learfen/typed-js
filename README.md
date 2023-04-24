@@ -77,7 +77,14 @@ Validation instance and update
 Try using invalid parameters
 
 
-
 ```js
 	newObjectPerson.updateName('daniel2', 12)
+```
+
+
+How use typed? instance 
+```js
+	const learfen = $userName('learfen')
+	console.log(learfen)
+	console.log(learfen + ' test string as primitive, ready concat?')
 ```
