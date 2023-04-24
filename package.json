@@ -1,6 +1,6 @@
 {
   "name": "js-easy-typed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Try typed js",
   "main": "index.js",
   "type": "module",
