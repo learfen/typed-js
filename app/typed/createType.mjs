@@ -113,3 +113,5 @@ export function install(types) {
         global[type] = types[type]
     }
 }
+
+export default { create , install }
