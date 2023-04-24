@@ -1,4 +1,8 @@
 {
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/learfen/js-typed.git"
+  },
   "name": "js-easy-typed",
   "version": "1.0.4",
   "description": "Try typed js",
