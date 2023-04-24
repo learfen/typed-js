@@ -1,7 +1,7 @@
-# typed-js
-add typed in js, import index file
+# npm i js-easy-typed
+Add typed in js, import index file
 
-## How install type, install as global in file ./types.mjs
+## How install type, install as global 
 
 ```js
 	install({
@@ -10,9 +10,12 @@ add typed in js, import index file
 	})
 ```
 
-## Create primitive (string-number): new type, create in file ./types.mjs
+## Create primitive (string-number): new type, create 
+
+```js
 	const $userName = create(Joi.string().alphanum().min(3).max(20))
 	const $legajo = create(Joi.number().min(1))
+```
 
 How update primitive
 
@@ -31,7 +34,7 @@ Primitives (number or string) work normally
 	console.log( folder + 20 )
 ```
 
-## Create object: new type, create in file ./types.mjs
+## Create object: new type, create 
 
 ```js
 	const $user = create({
