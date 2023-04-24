@@ -1,3 +1,7 @@
 import Joi from "joi"
-import { create , install } from "./app/typed/createType.mjs"
+import typed from "./app/typed/createType.mjs"
+
+export const create = typed.create 
+export const install = typed.install 
+
 export default { create , install }
