@@ -1,7 +1,5 @@
 import Joi from "joi"
-import typed from './parseFunctionTyped.mjs'
-
-global.typed = typed
+import './parseFunctionTyped.mjs'
 
 let keyValue = Symbol('value')
 function createObject(typeDefined) {
@@ -117,4 +115,4 @@ export function install(types) {
     }
 }
 
-export default { create , install , typed }
+export default { create , install }
