@@ -44,8 +44,8 @@ Primitives (number or string) work normally
 	})
 ```
 
-## Create function or class: new type, create in fiel ./types.mjs
-Validation call
+## Create function or class: new type
+Validation call, define params as paramName=($typename) 
 
 
 ```js
