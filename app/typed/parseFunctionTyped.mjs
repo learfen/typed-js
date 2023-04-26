@@ -49,4 +49,6 @@ const typed = ( fn , returnType ) => {
     return newClass
     // return paramsType( text , fn , returnType )
 }
+globalThis.typed = typed
+global.typed = typed
 export default typed

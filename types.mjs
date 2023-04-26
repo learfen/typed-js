@@ -16,7 +16,7 @@ const $student = create({
     user: $user
 })
 const $studentAlternative = create({
-    'legajo?': $legajo
+    legajo: $legajo
 })
 
 install({

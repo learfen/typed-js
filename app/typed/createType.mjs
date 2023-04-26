@@ -112,6 +112,7 @@ export function create(typeDefined) {
 export function install(types) {
     for (let type in types) {
         global[type] = types[type]
+        globalThis[type] = types[type]
     }
 }
 

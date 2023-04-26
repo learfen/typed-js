@@ -165,28 +165,30 @@ console.log( updateName )
 
 
 
+function alternativeTest(){
+    
+    console.log('\n\n\n\n --------------- ALTERNATIVE KEY TEST --------------------')
+    let studentAlternative = $studentAlternative({
+        legajo: null
+    })
+    // created
+    console.log(studentAlternative)
+    // updated
+    studentAlternative.legajo.set(2)
+    console.log(studentAlternative)
 
-console.log('\n\n\n\n --------------- ALTERNATIVE KEY TEST --------------------')
-let studentAlternative = $studentAlternative({
-    legajo: null
-})
-// created
-console.log(studentAlternative)
-// updated
-studentAlternative.legajo.set(2)
-console.log(studentAlternative)
+    console.log('\nExample valid value ')
+    try {
+        studentAlternative.user.password.value = 'dani1234'
+        successTest.push(' :) ALTERNATIVE KEY TEST ')
+    } catch (error) {
+        failTest.push('ALTERNATIVE KEY TEST 1 : :( fail function eval ')
+    }
 
-console.log('\nExample valid value ')
-try {
-    studentAlternative.user.password = 'dani1234'
-    successTest.push(' :) ALTERNATIVE KEY TEST ')
-} catch (error) {
-    failTest.push('ALTERNATIVE KEY TEST 1 : :( fail function eval ')
 }
-
 console.log('\nExample invalid value ')
 try {
-    studentAlternative.user.password = 'da'
+    studentAlternative.user.password.value = 'da'
     failTest.push('ALTERNATIVE KEY TEST 2: :( fail function eval ')
 } catch (error) {
     successTest.push(' :) ALTERNATIVE KEY TEST ')
