@@ -4,7 +4,7 @@
     "url": "https://github.com/learfen/js-typed.git"
   },
   "name": "js-easy-typed",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Try typed js",
   "main": "index.js",
   "type": "module",
