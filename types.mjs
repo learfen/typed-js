@@ -15,10 +15,14 @@ const $student = create({
     legajo: $legajo,
     user: $user
 })
+const $studentAlternative = create({
+    'legajo?': $legajo
+})
 
 install({
     $userName
     , $legajo
     , $user
     , $student
+    , $studentAlternative
 })

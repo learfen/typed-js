@@ -18,7 +18,7 @@ function methodType( text , fn , returnType ){
 }
 
 
-global.typed = ( fn , returnType ) => {
+const typed = ( fn , returnType ) => {
     let text = fn.toString()
     if(text.search('class') == 0){
         let add = ''
@@ -49,3 +49,4 @@ global.typed = ( fn , returnType ) => {
     return newClass
     // return paramsType( text , fn , returnType )
 }
+export default typed
