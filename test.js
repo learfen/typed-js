@@ -155,9 +155,7 @@ newObjectPerson.updateName('daniel2', 12)
 console.log("what's your name?",newObjectPerson.name)
 
 const updateName = typed(function updateName(name = ($userName), age = ($legajo)) {
-        this.name = name
-        this.age = age
-        console.log(this.name)
+        console.log(name , age )
     }
 )
 console.log( updateName )

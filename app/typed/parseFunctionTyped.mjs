@@ -42,7 +42,23 @@ const typed = ( fn , returnType ) => {
         eval('newClass='+ classText.join('').slice(0,-1) )
         return newClass
     }
-    let fnText = methodType( text )
+    
+    let methods = text.split('{')[0].split('=>')[0].replace('function','').replace('async','').replace(fn.name,'').split(',').map( item =>{
+        return item.split('=')[0].split('(').join('').split(')').join('')
+    }).join(',')
+    
+    let fnText = '(...args) => { let ['+methods+'] = args;'+methodType( text )+'}'
+    console.log( {fnText} )
+    let typesFunction 
+    eval('typesFunction='+ fnText )
+    return (...args) => {
+        try{
+            typesFunction(...args)
+            return fn(...args)
+        } catch (error) {
+            throw error
+        }
+    }
     fnText = text.replace('{' , '{\n'+fnText)
     let newClass
     eval('newClass='+ fnText )
