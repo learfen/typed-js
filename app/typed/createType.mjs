@@ -120,6 +120,7 @@ export function install(types) {
         global[type] = types[type]
         globalThis[type] = types[type]
     }
+    return types
 }
 
 export default { create , install , Joi }
