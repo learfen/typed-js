@@ -35,7 +35,7 @@ function createObject(_typeDefined) {
             return typeCreated
         } catch (error) {
             for(let type in _typeDefined){
-                console.log( { type , rules: _typeDefined[type]._rules.map( i => {
+                console.log( { param:type , type:_typeDefined[type].type, rules: _typeDefined[type]._rules.map( i => {
                     return { name:i.name, args:JSON.stringify(i.args) }
                 }) } )
             }
@@ -116,6 +116,7 @@ export function create(typeDefined) {
 }
 
 export function install(types) {
+    
     for (let type in types) {
         global[type] = types[type]
         globalThis[type] = types[type]
