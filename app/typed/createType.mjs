@@ -2,15 +2,15 @@ import Joi from "joi"
 import './parseFunctionTyped.mjs'
 
 let keyValue = Symbol('value')
-function createObject(typeDefined) {
-    for (let key in typeDefined) {
-        if (typeDefined[key]['$_root']) {
-            typeDefined[key] = typeDefined[key].required()
+function createObject(_typeDefined) {
+    for (let key in _typeDefined) {
+        if (_typeDefined[key]['$_root']) {
+            _typeDefined[key] = _typeDefined[key].required()
         } else {
-            typeDefined[key] = typeDefined[key]('@schema').required()
+            _typeDefined[key] = _typeDefined[key]('@schema').required()
         }
     }
-    typeDefined = Joi.object(typeDefined)
+    let typeDefined = Joi.object(_typeDefined)
     return value => {
         if (value == '@schema') return typeDefined
         try {
@@ -34,6 +34,11 @@ function createObject(typeDefined) {
             Object.preventExtensions(typeCreated)
             return typeCreated
         } catch (error) {
+            for(let type in _typeDefined){
+                console.log( { type , rules: _typeDefined[type]._rules.map( i => {
+                    return { name:i.name, args:JSON.stringify(i.args) }
+                }) } )
+            }
             console.log('Error de tipos', error)
             throw error
         }
@@ -86,11 +91,12 @@ function createPrimitive(typeDefined) {
                 }
                 , set(target, key, value) {
                     try {
-                        Joi.assert({ value: value }, Joi.object({ value: typeDefined }))
+                        Joi.assert({ value }, Joi.object({ value: typeDefined }))
                         data = value
                         target.value = data
                         return target
                     } catch (error) {
+                        console.log('Error con el tipo de archivo ', typeof obj)
                         throw error
                     }
                 }
@@ -116,4 +122,4 @@ export function install(types) {
     }
 }
 
-export default { create , install }
+export default { create , install , Joi }
