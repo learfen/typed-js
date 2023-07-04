@@ -1,6 +1,15 @@
 # npm i js-easy-typed
 Add typed in js, import index file
 
+## How import in commonjs
+```
+async function main(){
+	const { create , install , Joi , typed } = await import("js-easy-typed")
+
+	const $profile = install( create({ user:create(Joi.string().alphanum().min(3).max(20)) }) )
+
+```
+
 ## How install type, install as global 
 
 ```js
