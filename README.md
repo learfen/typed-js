@@ -7,6 +7,8 @@ async function main(){
 	const { create , install , Joi , typed } = await import("js-easy-typed")
 
 	const $profile = install( create({ user:create(Joi.string().alphanum().min(3).max(20)) }) )
+	// or
+	install( create({ user:create(Joi.string().alphanum().min(3).max(20)) }) )
 
 ```
 
