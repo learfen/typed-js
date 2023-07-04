@@ -6,9 +6,9 @@ Add typed in js, import index file
 async function main(){
 	const { create , install , Joi , typed } = await import("js-easy-typed")
 
-	const $profile = install( create({ user:create(Joi.string().alphanum().min(3).max(20)) }) )
+	const $profile = install( { $profile:create({ user:create(Joi.string().alphanum().min(3).max(20)) }) } )
 	// or
-	install( create({ user:create(Joi.string().alphanum().min(3).max(20)) }) )
+	install( { $profile:create({ user:create(Joi.string().alphanum().min(3).max(20)) }) } )
 
 ```
 
